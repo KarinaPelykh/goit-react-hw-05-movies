@@ -2,7 +2,7 @@ import { fetchCreditsFilm } from 'components/service/films.Api';
 import { useHttp } from 'components/hooks/useHttp';
 import { useParams } from 'react-router-dom';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieId } = useParams();
   const [cast] = useHttp(fetchCreditsFilm, movieId);
   console.log(cast);
@@ -22,3 +22,4 @@ export const Cast = () => {
     </>
   );
 };
+export default Cast;

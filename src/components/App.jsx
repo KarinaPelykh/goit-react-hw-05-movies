@@ -1,9 +1,9 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Home } from './peges/Home/Home';
-import { Movies } from './peges/Movies/Movies';
-import { MoviesDetails } from './peges/MoviesDetails/MoviesDetails';
-import { Cast } from './peges/Cast/Cast';
-import { Reviews } from './peges/Reviews/Reviews';
+import { Home } from 'peges/Home/Home';
+import { Movies } from 'peges/Movies/Movies';
+import { MoviesDetails } from 'peges/MoviesDetails/MoviesDetails';
+import Cast from './Cast/Cast';
+import Reviews from './Reviews/Reviews';
 import { Layout } from './Layout/Layout';
 export const App = () => {
   return (
