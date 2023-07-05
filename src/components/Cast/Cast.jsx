@@ -1,5 +1,5 @@
-import { fetchCreditsFilm } from 'components/service/films.Api';
-import { useHttp } from 'components/hooks/useHttp';
+import { fetchCreditsFilm } from 'service/films.Api';
+import { useHttp } from 'hooks/useHttp';
 import { useParams } from 'react-router-dom';
 
 const Cast = () => {

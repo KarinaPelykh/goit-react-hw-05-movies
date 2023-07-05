@@ -1,5 +1,5 @@
-import { fetchInfoFilm } from 'components/service/films.Api';
-import { useHttp } from 'components/hooks/useHttp';
+import { fetchInfoFilm } from 'service/films.Api';
+import { useHttp } from 'hooks/useHttp';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { Suspense } from 'react';
 const MoviesDetails = () => {
@@ -15,7 +15,11 @@ const MoviesDetails = () => {
       </Link>
       <div>
         <img
-          src={`https://image.tmdb.org/t/p/w500/${filmInfo.poster_path}`}
+          src={
+            filmInfo.poster_path
+              ? `https://image.tmdb.org/t/p/w500/${filmInfo.poster_path}`
+              : `https://www.svgrepo.com/show/509283/user.svg`
+          }
           alt={filmInfo.title}
           width="300"
         />
