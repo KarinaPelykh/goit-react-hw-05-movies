@@ -6,17 +6,17 @@ export const Cast = () => {
   const { movieId } = useParams();
   const [cast] = useHttp(fetchCreditsFilm, movieId);
   console.log(cast);
-  // if (!cast || cast.length === 0) {
-  //   return <p>We don`t have any cast for this movie.</p>;
-  // }
+  if (!cast || cast.length === 0) {
+    return <p>We don`t have any cast for this movie.</p>;
+  }
 
   return (
     <>
       {cast.map(item => (
         <>
           <img src="" alt="" />
-          <h1>{item}</h1>
-          <p></p>
+          <h1>{}</h1>
+          <p>{}</p>
         </>
       ))}
     </>

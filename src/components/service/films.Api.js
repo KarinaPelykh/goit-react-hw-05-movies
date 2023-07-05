@@ -48,3 +48,15 @@ export const fetchCreditsFilm = async id => {
     console.log(error);
   }
 };
+
+export const fetchReviewsFilm = async id => {
+  try {
+    const results = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${KEY}language=en-US&page=1`
+    );
+    console.log(results.data);
+    return results.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
