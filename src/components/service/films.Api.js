@@ -25,24 +25,25 @@ export const fetchSearchFilms = async value => {
   }
 };
 
-// export const fetchInfoFilm = async id => {
-//   try {
-//     const results = await axios.get(
-//       `https://api.themoviedb.org/3/movie/${id}?api_key=${KEY}language=en-US`
-//     );
-//     console.log(results.data);
-//     return results.data;
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
 export const fetchInfoFilm = async id => {
   try {
-    const response = await axios.get(
+    const results = await axios.get(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${KEY}&language=en-US`
     );
-    console.log(response.data);
-    return response.data;
+
+    return results.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const fetchCreditsFilm = async id => {
+  try {
+    const results = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${KEY}&language=en-US`
+    );
+    console.log(results.data);
+    return results.data;
   } catch (error) {
     console.log(error);
   }

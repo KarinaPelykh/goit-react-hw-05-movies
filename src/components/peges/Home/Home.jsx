@@ -7,10 +7,10 @@ export const Home = () => {
   return (
     <>
       <h1>Trending today</h1>
-      <ul style={{ listStyle: 'none' }}>
+      <ul>
         {list?.map(item => (
           <li key={item.id}>
-            <Link to={`${item.id}`}>{item.title}</Link>
+            <Link to={`/movies/${item.id}`}>{item.title}</Link>
           </li>
         ))}
       </ul>
