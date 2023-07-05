@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 const Cast = () => {
   const { movieId } = useParams();
   const [cast] = useHttp(fetchCreditsFilm, movieId);
-  console.log(cast);
+
   if (!cast || cast.length === 0) {
     return <p>We don`t have any cast for this movie.</p>;
   }
@@ -13,11 +13,19 @@ const Cast = () => {
   return (
     <>
       {cast.map(item => (
-        <>
-          <img src="" alt="" />
-          <h1>{}</h1>
-          <p>{}</p>
-        </>
+        <div key={item.id}>
+          <img
+            src={
+              item.profile_path
+                ? `https://image.tmdb.org/t/p/w300/${item.profile_path}`
+                : `https://www.svgrepo.com/show/509283/user.svg`
+            }
+            alt={item.name}
+            width={300}
+          />
+          <h1>{item.name}</h1>
+          <p>{item.character}</p>
+        </div>
       ))}
     </>
   );
